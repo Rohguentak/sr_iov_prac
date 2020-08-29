@@ -15,8 +15,8 @@ bios setting
 ------------
         sr-iov 활성화
         1. bios 설정 접속
-        2. System Settings
-        3. Network
+        2. System Settings 선택
+        3. Network 
         4. network device list에서 infiniband device 선택
         5. Mellanox Network Adapter 선택
         6. Virtualization Mode <SR-IOV> 선택
