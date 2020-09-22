@@ -33,6 +33,7 @@ mlnx_ofed 설치
         1. MLNX_OFED_LINUX-4.9-0.1.7.0-rhel7.8-x86_64.tgz 다운로드
         2. tar -xvf MLNX_OFED_LINUX-4.9-0.1.7.0-rhel7.8-x86_64.tgz
         3. cd MLNX_OFED_LINUX-4.9-0.1.7.0-rhel7.8-x86_64
+           yum install -y python-devel redhat-rpm-config rpm-build kernel-devel-3.10.0-1127.el7.x86_64 gcc tcl gcc-gfortran tk
         4. ./mlnxofedinstall --add-kernel-support
         5. /etc/init.d/openibd restart
         6. /etc/init.d/opensmd restart
@@ -48,7 +49,7 @@ SR-IOV configuration
         
 enabling SR-IOV on MLNX_OFED driver
 -----------------------------------
-        1. vi /etc/modprobe.d/mlx4_core.conf 
+        1. vi /etc/modprobe.d/mlx4_core.conf or mlnx.conf
         2. options mlx4_core num_vfs=4 port_type_array=1,1 probe_vf=0   /// VF는 virtual function의 약자
         
         # num_vfs - is the number of VF required for this server, in this example 4 VFs.
