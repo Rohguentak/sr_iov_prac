@@ -25,7 +25,9 @@ bios setting
 grub파일 수정
 -----------
         1. /etc/default/grub 파일에서 GRUB_CMDLINE_LINUX에 'intel_iommu=on iommu=pt' 추가
-        2. grub2-mkconfig -o /boot/grub2/grub.cfg 실행
+        2. grub2-mkconfig -o /boot/grub2/grub.cfg  실행
+        /boot/efi/EFI/centos/grub.cfg에 grub.cfg 파일이 위치하면 
+        gru2-mkconfig -o /boot/efi/EFI/centos/grub.cfg 
         
 
 mlnx_ofed 설치
@@ -36,6 +38,7 @@ mlnx_ofed 설치
            yum install -y python-devel redhat-rpm-config rpm-build kernel-devel-3.10.0-1127.el7.x86_64 gcc tcl gcc-gfortran tk
         4. ./mlnxofedinstall --add-kernel-support
            dracut -f 
+           rmmod ib_isert ib_srpt rpcrdma
         5. /etc/init.d/openibd restart
         6. /etc/init.d/opensmd restart
         
