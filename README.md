@@ -35,6 +35,7 @@ mlnx_ofed 설치
         3. cd MLNX_OFED_LINUX-4.9-0.1.7.0-rhel7.8-x86_64
            yum install -y python-devel redhat-rpm-config rpm-build kernel-devel-3.10.0-1127.el7.x86_64 gcc tcl gcc-gfortran tk
         4. ./mlnxofedinstall --add-kernel-support
+           dracut -f 
         5. /etc/init.d/openibd restart
         6. /etc/init.d/opensmd restart
         
